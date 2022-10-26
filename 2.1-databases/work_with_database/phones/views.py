@@ -14,7 +14,7 @@ def show_catalog(request):
         context = {'phones': Phone.objects.order_by('name')}
     elif sort == 'min_price':
         context = {'phones': Phone.objects.order_by('price')[::-1]}
-    return render(request, template, context)
+    return render(request, template, context) 
 
 
 def show_product(request, slug):
