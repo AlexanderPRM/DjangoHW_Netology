@@ -1,11 +1,14 @@
 from django.contrib import admin
 
-from .models import Student, Teacher
+from .models import Student, Teacher, TeacherStudents
 
+
+class TeacherStudents(admin.TabularInline):
+    model = TeacherStudents
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
-    pass
+    inlines = (TeacherStudents,)
 
 
 @admin.register(Teacher)
