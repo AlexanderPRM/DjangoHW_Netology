@@ -1,0 +1,14 @@
+@baseUrl = http://localhost:8000/api/v1
+
+#
+
+GET  {{baseUrl}}/courses/?id=1
+
+###
+
+PATCH  {{baseUrl}}/courses/1/
+Content-Type: application/json
+
+{
+    "name": "test2"
+}
