@@ -28,7 +28,7 @@ def student_factory():
 def test_course_one(client, course_factory):
     course = course_factory()
 
-    response = client.get('/api/v1/courses/')
+    response = client.get(f'/api/v1/courses/{course.id}')
     assert 200 == response.status_code
     assert len(response.json()) == 1
     assert course.id == response.json()[0]['id']
