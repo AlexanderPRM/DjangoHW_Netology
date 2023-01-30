@@ -2,13 +2,13 @@
 
 #
 
-GET  {{baseUrl}}/courses/?id=1
+GET  {{baseUrl}}/courses/1/
 
 ###
 
-PATCH  {{baseUrl}}/courses/1/
+POST {{baseUrl}}/courses/
 Content-Type: application/json
 
 {
-    "name": "test2"
+    "name": "test3"
 }

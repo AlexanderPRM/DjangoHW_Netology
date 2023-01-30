@@ -1,4 +1,3 @@
-
 import pytest
 from rest_framework.test import APIClient
 from model_bakery import baker
@@ -27,11 +26,9 @@ def student_factory():
 @pytest.mark.django_db
 def test_course_one(client, course_factory):
     course = course_factory()
-
-    response = client.get(f'/api/v1/courses/{course.id}')
+    response = client.get(f'/api/v1/courses/{course.id}/')
     assert 200 == response.status_code
-    assert len(response.json()) == 1
-    assert course.id == response.json()[0]['id']
+    assert course.id == response.json()['id']
 
 
 @pytest.mark.django_db
