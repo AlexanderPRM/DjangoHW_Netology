@@ -2,3 +2,5 @@ django
 djangorestframework
 psycopg2-binary
 django-filter==22.1
+gunicorn
+psycopg2-binary
